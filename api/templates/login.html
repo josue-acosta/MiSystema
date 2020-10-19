@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block container %}
+
+<h1>Login</h1>
+{% if session.username %}
+<h2>You're already logged in</h2>
+<a class="btn" href="{{ url_for('auth.logout')}}">Log out</a>
+{% else %}
+<form method="POST" action="{{ url_for('auth.login') }}" role="form">
+
+	<div>{{ form.username.label }}</div>
+	<div>{{ form.username() }}</div>
+	<p>username</p>
+
+	<div>{{ form.password.label }}</div>
+	<div>{{ form.password() }}</div>
+	<p>password</p>
+
+	<button type="submit" class="btn">Submit</button>
+</form>
+{% endif %}
+
+{% endblock %}

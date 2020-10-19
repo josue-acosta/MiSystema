@@ -1,3 +1,24 @@
+Chart Colors:
+Cake    -  Purple   rgba(114, 9, 183)
+Pasties -  Blue     rgba(76, 201, 240)
+Bread   -  Pink     rgba(242, 92, 162)
+
+
+= Bread =
+Item #1
+Count: 120
+Price: .65
+
+Item #1
+Count: 200
+Price: 1.00
+
+Item #1
+Count: 96
+Price: .40
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
