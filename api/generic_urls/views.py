@@ -14,7 +14,7 @@ generic_urls_blueprint = Blueprint("generic_urls", __name__)
 def weekday_gross_sales():
     """Gets all the orders and returns a JSON object"""
     # get all of the sales
-    orders = Orders.objects.only("date", "price", "sales_category")
+    orders = Orders.objects.only("date_time", "price", "sales_category")
 
     # filter for this week
     this_week = datetime.today().isocalendar()
@@ -65,7 +65,7 @@ def weekday_gross_sales():
 @generic_urls_blueprint.route("/weekly-gross-sales")
 def get_weekly_gross_sales():
     # get all of the sales
-    orders = Orders.objects.only("date", "price", "sales_category")
+    orders = Orders.objects.only("date_time", "price", "sales_category")
 
     # filter for this week
     this_week = datetime.today().isocalendar()

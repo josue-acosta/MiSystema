@@ -2,6 +2,7 @@ import React from 'react';
 
 // Styles
 import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -16,6 +17,12 @@ const useStyles = makeStyles((theme) => ({
     },
     menuItem: {
         color: 'white'
+    },
+    pagination: {
+        textAlign: "right"
+    },
+    titleMonth: {
+        textAlign: "center"
     }
 }));
 
@@ -27,23 +34,31 @@ const CakeOrderPagination = ({ weekRange, month, changeWeek, resetWeek }) => {
         <>
             <AppBar position="static">
                 <Toolbar>
-                    <Typography variant="h6" className={classes.title} >
-                        {weekRange}
-                    </Typography>
+                    <Grid container>
+                        <Grid item xs={4}>
+                            <Typography variant="h6" >
+                                {weekRange}
+                            </Typography>
+                        </Grid>
 
-                    <Typography variant="h6" className={classes.title} >
-                        {month}
-                    </Typography>
+                        <Grid item xs={4} className={classes.titleMonth} >
+                            <Typography variant="h6" >
+                                {month}
+                            </Typography>
+                        </Grid>
 
-                    <IconButton className={classes.menuItem} aria-label="previouse week" component="span" onClick={() => { changeWeek(-1) }} >
-                        <NavigateBeforeIcon />
-                    </IconButton>
+                        <Grid item xs={4} className={classes.pagination} >
+                            <IconButton className={classes.menuItem} aria-label="previouse week" component="span" onClick={() => { changeWeek(-1) }} >
+                                <NavigateBeforeIcon />
+                            </IconButton>
 
-                    <Button className={classes.menuItem} onClick={() => { resetWeek() }}>This Week</Button>
+                            <Button className={classes.menuItem} onClick={() => { resetWeek() }}>This Week</Button>
 
-                    <IconButton className={classes.menuItem} aria-label="next week" component="span" onClick={() => { changeWeek(1) }} >
-                        <NavigateNextIcon />
-                    </IconButton>
+                            <IconButton className={classes.menuItem} aria-label="next week" component="span" onClick={() => { changeWeek(1) }} >
+                                <NavigateNextIcon />
+                            </IconButton>
+                        </Grid>
+                    </Grid>
                 </Toolbar>
             </AppBar>
         </>
