@@ -5,7 +5,7 @@ import { BrowserRouter, Route, NavLink } from 'react-router-dom'
 import Dashboard from './Dashboard'
 import CakeList from './CakeOrderList'
 import NewCakeOrder from './NewCakeOrder'
-import ViewCakeOrder from './ViewCakeOrder'
+import PrintCakeOrder from './PrintCakeOrder'
 import GrossSales from './GrossSales'
 import FoodCost from './FoodCost'
 import RevenueStreams from './RevenueStreams'
@@ -175,7 +175,7 @@ export default function PermanentDrawerLeft() {
                     <Route exact path="/food-cost/:categoryItem" render={(props) => <CategoryItemsList {...props} />} />
                     <Route path="/food-cost/:categoryItem/:foodCostItem" render={(props) => <FoodCostItem {...props} />} />
 
-                    <Route path="/order/:orderId/" render={(props) => <ViewCakeOrder {...props} />} />
+                    <Route exact path="/order/:orderId/" render={(props) => <PrintCakeOrder {...props} />} />
                 </main>
             </div>
         </BrowserRouter>

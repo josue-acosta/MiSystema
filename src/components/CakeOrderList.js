@@ -28,10 +28,6 @@ class CakeOrderList extends Component {
         this.getData();
     }
 
-    // componentDidUpdate() {
-    //     this.getThisWeekNumberFormat()
-    // }
-
     getData = async () => {
         await fetch('/orders')
             .then(response => response.json())
