@@ -85,12 +85,6 @@ class PrintCakeOrder extends Component {
 
                     <CardActions>
                         <Button
-                            component={NavLink}
-                            to={`/order/edit/${this.props.match.params.orderId}`}
-                            startIcon={<EditIcon />} >
-                            Edit
-                        </Button>
-                        <Button
                             className={classes.deleteButton}
                             startIcon={<DeleteIcon />}
                             onClick={() => { this.handleDeleteOrder() }} >

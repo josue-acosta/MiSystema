@@ -177,7 +177,6 @@ export default function PermanentDrawerLeft() {
                     <Route path="/food-cost/:categoryItem/:foodCostItem" render={(props) => <FoodCostItem {...props} />} />
 
                     <Route exact path="/order/:orderId/" render={(props) => <PrintCakeOrder {...props} />} />
-                    <Route exact path="/order/edit/:orderId/" render={(props) => <EditCakeOrder {...props} />} />
                 </main>
             </div>
         </BrowserRouter>
