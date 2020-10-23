@@ -17,13 +17,18 @@ import PrintIcon from '@material-ui/icons/Print';
 
 const styles = theme => ({
     button: {
-        marginBottom: "1rem"
+        marginBottom: "1rem",
+        marginLeft: "77.5%",
     },
     buttonActionArea: {
         flexGrow: 1
     },
     deleteButton: {
         color: "#d32f2f"
+    },
+    card: {
+        maxWidth: "75%",
+        margin: "0 auto",
     }
 });
 
@@ -76,9 +81,11 @@ class PrintCakeOrder extends Component {
                     content={() => this.componentRef}
                 />
 
-                <Card>
+                <Card className={classes.card}>
                     <CardContent>
-                        <ViewCakeOrder ref={el => (this.componentRef = el)} cakeOrder={cakeOrder} />
+                        <ViewCakeOrder
+                            ref={el => (this.componentRef = el)}
+                            cakeOrder={cakeOrder} />
                     </CardContent>
 
                     <CardActions>

@@ -14,7 +14,12 @@ import TodayIcon from '@material-ui/icons/Today';
 
 const styles = theme => ({
     paper: {
-        padding: "1rem"
+        padding: "1rem",
+        '@media print': {
+            margin: 0,
+            padding: 0,
+            width: "100%"
+        }
     }
 });
 
@@ -41,7 +46,7 @@ class ViewCakeOrder extends Component {
 
         return (
             <>
-                <Grid container spacing={2} className={classes.paper} >
+                <Grid container spacing={2} className={classes.paper}>
                     <Grid item xs={6}>
                         <Typography variant="subtitle2" >Order No.</Typography>
                         <Typography variant="body1" >{order_number}</Typography>
@@ -58,10 +63,10 @@ class ViewCakeOrder extends Component {
                                     <InputAdornment position="start">
                                         <PermIdentityIcon />
                                     </InputAdornment>
-                                )
+                                ),
+                                readOnly: true
                             }}
                             InputLabelProps={{
-                                readOnly: true,
                                 shrink: true
                             }}
                         />
@@ -78,10 +83,10 @@ class ViewCakeOrder extends Component {
                                     <InputAdornment position="start">
                                         <TodayIcon />
                                     </InputAdornment>
-                                )
+                                ),
+                                readOnly: true
                             }}
                             InputLabelProps={{
-                                readOnly: true,
                                 shrink: true
                             }}
                         />
@@ -98,10 +103,10 @@ class ViewCakeOrder extends Component {
                                     <InputAdornment position="start">
                                         <PhoneIcon />
                                     </InputAdornment>
-                                )
+                                ),
+                                readOnly: true
                             }}
                             InputLabelProps={{
-                                readOnly: true,
                                 shrink: true
                             }}
                         />
@@ -113,8 +118,10 @@ class ViewCakeOrder extends Component {
                             label="Tama&ntilde;io"
                             value={cake_size}
                             fullWidth
-                            InputLabelProps={{
+                            InputProps={{
                                 readOnly: true,
+                            }}
+                            InputLabelProps={{
                                 shrink: true
                             }} >
                         </TextField>
@@ -126,8 +133,10 @@ class ViewCakeOrder extends Component {
                             label="Sabor #1"
                             value={flavor_1}
                             fullWidth
-                            InputLabelProps={{
+                            InputProps={{
                                 readOnly: true,
+                            }}
+                            InputLabelProps={{
                                 shrink: true
                             }} >
                         </TextField>
@@ -137,8 +146,10 @@ class ViewCakeOrder extends Component {
                             label="Sabor #2"
                             value={flavor_2}
                             fullWidth
-                            InputLabelProps={{
+                            InputProps={{
                                 readOnly: true,
+                            }}
+                            InputLabelProps={{
                                 shrink: true
                             }} >
                         </TextField>
@@ -150,8 +161,10 @@ class ViewCakeOrder extends Component {
                             label="Relleno"
                             value={filling}
                             fullWidth
-                            InputLabelProps={{
+                            InputProps={{
                                 readOnly: true,
+                            }}
+                            InputLabelProps={{
                                 shrink: true
                             }} >
                         </TextField>
@@ -166,8 +179,10 @@ class ViewCakeOrder extends Component {
                             label="Decoracion"
                             value={decoration}
                             fullWidth
-                            InputLabelProps={{
+                            InputProps={{
                                 readOnly: true,
+                            }}
+                            InputLabelProps={{
                                 shrink: true
                             }} />
                     </Grid>
@@ -178,8 +193,10 @@ class ViewCakeOrder extends Component {
                             label="Nombre de Festejado"
                             value={celebrated_name}
                             fullWidth
-                            InputLabelProps={{
+                            InputProps={{
                                 readOnly: true,
+                            }}
+                            InputLabelProps={{
                                 shrink: true
                             }} />
                     </Grid>
@@ -191,8 +208,10 @@ class ViewCakeOrder extends Component {
                             label="Edad de Festejado"
                             value={celebrated_age}
                             fullWidth
-                            InputLabelProps={{
+                            InputProps={{
                                 readOnly: true,
+                            }}
+                            InputLabelProps={{
                                 shrink: true
                             }} />
                     </Grid>
@@ -217,8 +236,10 @@ class ViewCakeOrder extends Component {
                             label="Mensaje del Festejado"
                             value={celebrated_text}
                             fullWidth
-                            InputLabelProps={{
+                            InputProps={{
                                 readOnly: true,
+                            }}
+                            InputLabelProps={{
                                 shrink: true
                             }} />
                     </Grid>
@@ -235,10 +256,10 @@ class ViewCakeOrder extends Component {
                                     <InputAdornment position="start">
                                         $
                                     </InputAdornment>
-                                )
+                                ),
+                                readOnly: true,
                             }}
                             InputLabelProps={{
-                                readOnly: true,
                                 shrink: true
                             }}
                         />
